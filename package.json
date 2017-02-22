@@ -61,7 +61,8 @@
   },
   "dependencies": {
     "async": "~2.1.4",
-    "google-auth-library": "~0.10.0",
+    "bluebird": "^3.3.5",
+    "google-auth-library": "git://github.com/nhooey/google-auth-library-nodejs.git#master",
     "string-template": "~1.0.0"
   },
   "devDependencies": {
