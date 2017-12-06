@@ -17,6 +17,7 @@ var assert = require('assert');
 var googleapis = require('../');
 var nock = require('nock');
 var utils = require('./utils');
+var path = require('path');
 
 function testInsert (urlshortener) {
   var obj = { longUrl: 'http://google.com/' };
@@ -77,7 +78,7 @@ describe('Request#toPromise', function () {
     })
       .post('/urlshortener/v1/url')
       .times(2)
-      .replyWithFile(200, __dirname + '/fixtures/urlshort-insert-res.json');
+      .replyWithFile(200, path.join(__dirname, '/fixtures/urlshort-insert-res.json'));
 
     return testInsert(localUrlshortener).then(function () {
       return testInsert(remoteUrlshortener);
